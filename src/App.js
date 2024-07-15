@@ -5,8 +5,18 @@ const messages = [
   'Apply for jobs 💼',
   'Invest your new income 🤑',
 ];
-// State is data that changes over time. It's stored in variables that are declared using the useState hook.
+
 export default function App() {
+  return (
+    <>
+      <Steps />
+      <Steps />
+    </>
+  );
+}
+
+// State is data that changes over time. It's stored in variables that are declared using the useState hook.
+function Steps() {
   // Hooks start with use, and useState is a hook that lets you add state to your function components.
   // Hooks can only be called at the top level of your function components.
   // State Changed? React will re-render the component.
@@ -24,7 +34,7 @@ export default function App() {
   }
 
   return (
-    <>
+    <div>
       <button className="close" onClick={() => setIsOpen(!isOpen)}>
         &times;
       </button>
@@ -56,6 +66,6 @@ export default function App() {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
