@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Button } from './Button';
 
 const messages = [
   'Learn React ⚛️',
@@ -6,16 +7,8 @@ const messages = [
   'Invest your new income 🤑',
 ];
 
-export default function App() {
-  return (
-    <>
-      <Steps />
-    </>
-  );
-}
-
 // State is data that changes over time. It's stored in variables that are declared using the useState hook.
-function Steps() {
+export function Steps() {
   // Hooks start with use, and useState is a hook that lets you add state to your function components.
   // Hooks can only be called at the top level of your function components.
   // State Changed? React will re-render the component.
@@ -50,25 +43,14 @@ function Steps() {
           </p>
           <div className="buttons">
             <Button bgColor="#7950f2" textColor="#fff" onClick={handlePrevious}>
-              <span>👈🏼</span> Previous{' '}
+              <span>👈🏼</span> Previous
             </Button>
             <Button bgColor="#7950f2" textColor="#fff" onClick={handleNext}>
-              Next <span>👉🏼</span>{' '}
+              Next <span>👉🏼</span>
             </Button>
           </div>
         </div>
       )}
     </div>
-  );
-}
-
-function Button({ bgColor, textColor, onClick, children }) {
-  return (
-    <button
-      style={{ backgroundColor: bgColor, color: textColor }}
-      onClick={onClick}
-    >
-      {children}
-    </button>
   );
 }
