@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button } from './Button';
+import { StepMessage } from './StepMessage';
 
 const messages = [
   'Learn React ⚛️',
@@ -38,9 +39,7 @@ export function Steps() {
             <div className={step >= 3 ? 'active' : ''}>3</div>
           </div>
 
-          <p className="message">
-            Step {step}: {message}
-          </p>
+          <StepMessage step={step}>{message}</StepMessage>
           <div className="buttons">
             <Button bgColor="#7950f2" textColor="#fff" onClick={handlePrevious}>
               <span>👈🏼</span> Previous
